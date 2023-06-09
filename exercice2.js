@@ -42,8 +42,8 @@ const orders = [
 
 
 
-let initialeDate = "1593561600000 / 1000";
-let finalDate = "1596153600000 / 1000";
+let initialeDate = "1593561600";
+let finalDate = "1596153600";
 
 function mise_a_jour(table) {
     for (let i = 0; i < table.length; i++) {
