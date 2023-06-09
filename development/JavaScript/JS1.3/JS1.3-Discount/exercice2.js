@@ -5,20 +5,25 @@
 /**
  * Discount
  */
-
+/* Conversion du 01/07/2020 et du 31/07/2020 en format d'heure Unix et stockage dans les variables minDate et maxDate **/
 
 let minDate = String(Date.UTC(2020, 06, 01) / 1000);
 let maxDate = String(Date.UTC(2020, 06, 31) / 1000);
-let percent;
+
+/* Déclaration de la varible promo qui n'est rien d'autre que le taux de réduction a appliqué aux commandes du mois de Juillet 2020 */
+
+let promo;
+
 let result;
+
 
 function reductionPrice(table) {
   for (let i = 0; i < table.length; i++) {
     if ((table[i].timestamp) <= maxDate && (table[i].timestamp) >= minDate) {
         
-      result = Number(table[i].price) - (Number(table[i].price) * percent);
+      result = Number(table[i].price) - (Number(table[i].price) * promo);
 
-      document.write("<p> La commande " + table[i].id + " a obtenu une réduction de  20% et votre prix actuel est de " + result.toFixed(2) + " </p>");
+      document.write("<p> La commande <strong>" + table[i].id + "</strong> a obtenu une réduction de <strong> 20% .</strong> Il paiera donc <strong> " + result.toFixed(2) + "$ </strong> au lieu de <strong> " + table[i].price + "$</strong> </p>");
     }
 
   }
@@ -26,7 +31,7 @@ function reductionPrice(table) {
 }
 
 
-percent = 20 / 100;
+promo = 20 / 100;
 
 const orders = [
   { id: 2340, customer: 101, product: 20, timestamp: "1591243565", price: "12.00" },
