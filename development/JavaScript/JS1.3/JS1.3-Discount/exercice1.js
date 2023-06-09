@@ -7,24 +7,25 @@ Discount
 /*
 Décalarition des variables concernant l'intervalle des dates
 */
-let firstDate = String(Date.UTC(2020, 06, 01));
+let firstDate = String(Date.UTC(2020, 06, 01) / 1000);
 
-let lastDate = String(Date.UTC(2020, 06, 31));
+let lastDate = String(Date.UTC(2020, 06, 31) / 1000);
 
 /*
 Création de la fonction permettant de convertir et de calcul le price en tenant compte du pourcentage de réduction
 */
+
+let reductionOfPrice;
+
 function caculOfReductionPrice(reductionOfPrice) {
 
     for (let i = 0; i < reductionOfPrice.length; i++) {
-
-        reductionOfPrice[i].timestamp = reductionOfPrice[i].timestamp * 1000;
 
         if (reductionOfPrice[i].timestamp >= firstDate && reductionOfPrice[i].timestamp <= lastDate) {
 
             reductionOfPrice[i].price = reductionOfPrice[i].price - (reductionOfPrice[i].price * 0.2);
 
-            document.write("<strong> La liste de la réduction du price avec un pourcentage de 20% en juillet 2020: " + reductionOfPrice[i].price + "</strong><br><br>");
+            document.write("<strong> Le résultat de la réduction du price avec un pourcentage de 20% en juillet 2020 est: " + reductionOfPrice[i].price + "</strong><br><br>");
         }
     }
 }
@@ -51,7 +52,7 @@ const orders = [
 ];
 
 /*
-Appel de la fonction qui permis de calculer la réduction sur le prix
+Appel de la fonction qui a permis de calculer la réduction sur le prix
 */
 
 caculOfReductionPrice(orders);
