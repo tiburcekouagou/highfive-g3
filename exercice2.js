@@ -40,7 +40,13 @@ const orders = [
 ]
 
 
+// let Init = Date.UTC(2020, 06, 01);
+// let End = Date.UTC(2020, 06, 30);
 
+// let initialeDate = Date getSeconds(Init);
+// let finalDate = Date getSeconds(End)
+// console.log(initialeDate);
+// console.log(finalDate);
 
 let initialeDate = "1593561600";
 let finalDate = "1596153600";
