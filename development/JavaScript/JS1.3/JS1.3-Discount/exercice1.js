@@ -5,11 +5,11 @@ const date1 = String(Date.UTC(2020, 06, 01) / 1000);
 const date2 = String(Date.UTC(2020, 06, 31) / 1000);
 let result;
 
-function Prototype (table) {
-  for (i = 0; i < table.length; i++) {
-    if ((table[i].timestamp) <= date2 && (table[i].timestamp) >= date1) {
-      result = Number(table[i].price) - Number(table[i].price * 0.2);
-      document.write(" <p> L'achéteur n°" + table[i].id + " bénéficie d'une reduction de 20% et son prix normal revient à " + result + ";  </p>");
+function Prototype (objet) {
+  for (i = 0; i < objet.length; i++) {
+    if ((objet[i].timestamp) <= date2 && (objet[i].timestamp) >= date1) {
+      result = Number(objet[i].price) - Number(objet[i].price * 0.2);
+      document.write(" <p> L'achéteur n°" + objet[i].id + " bénéficie d'une reduction de 20% et son prix normal revient à " + result + ";  </p>");
     }
   }
 return;
